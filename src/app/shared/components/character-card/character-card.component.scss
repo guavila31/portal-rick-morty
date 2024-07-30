@@ -1,0 +1,63 @@
+@import '../../../core/variables.scss';
+
+.card-item {
+  border: 1px solid $border-core;
+  background-color: $foreground-core;
+  border-radius: 10px;
+  width: 15rem;
+
+  .photo {
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .info {
+    padding: 1rem;
+    padding-top: .5rem;
+
+    .name {
+      font-size: 2rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .detail {
+      font-size: 1rem;
+      color: $font-color-gray;
+    }
+
+    .status {
+      font-size: .7rem;
+      color: $font-color-white;
+      text-align: end;
+    }
+  }
+}
+
+.favorite {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  height: 0px;
+
+  .btn-fav {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0px 10px 0px 40px;
+    border: 1px solid #3333;
+    background-color: $font-color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    mat-icon {
+      margin: 0px 0px 5px 5px;
+      cursor: pointer;
+      color: #00B5CC;
+      -webkit-text-stroke: 1.3px #B2DF28
+    }
+  }
+
+}

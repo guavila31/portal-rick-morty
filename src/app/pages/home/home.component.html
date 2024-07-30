@@ -1,0 +1,74 @@
+<div class="container mt-2">
+
+  <ng-container *ngIf="!(tab$ | async); else templateFavorite">
+    <div class="container">
+      <!-- <div class="d-flex justify-content-between align-items-center"> -->
+      <div class="row d-flex justify-content-between align-items-center">
+        <div
+          class="col-md-6 col-12 mb-3 mb-md-0 d-flex justify-content-md-start justify-content-center align-items-center">
+          <p class="font-primary">Início</p>
+        </div>
+
+        <div class="col-md-6 col-12 d-flex justify-content-md-end justify-content-center align-items-center">
+          <div class="box-input">
+            <input type="text" class="input-search" placeholder="Pesquisar" [formControl]="sSearch">
+            <div class="results" *ngIf="(arrCharacterFound$ | async) as character">
+              {{ character.info.count }} resultados encontrados
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content d-flex justify-content-center flex-wrap gap-3 mt-3">
+        <ng-container *ngIf="arrCharacter.length > 0, else home_page">
+          <ng-container *ngFor="let item of arrCharacter">
+            <app-character-card [oCharacter]="item" (addFavorite)="addDataFavorite($event)"
+              (removeFavorite)="removeDataFavorite($event)"></app-character-card>
+          </ng-container>
+        </ng-container>
+        <div class="next mt-2 mb-4" *ngIf="nextUrl">
+          <ng-container *ngIf="!bLoading; else carregando">
+            <button (click)="loadMoreCharacters()" class="btn-next">Carregar mais</button>
+          </ng-container>
+          <ng-template #carregando>
+            <div class="box-loading">
+              <mat-icon class="loading">autorenew</mat-icon>
+            </div>
+          </ng-template>
+
+        </div>
+
+        <ng-template #home_page>
+          <div class="card-notfound">
+            <p class="title"> Nada Foi encontrado </p>
+            <p class="subtitle"> Tente realizar uma nova busca </p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #templateFavorite>
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <p class="font-primary">Favoritos</p>
+      </div>
+
+      <div class="content d-flex justify-content-center flex-wrap gap-3 mt-3">
+        <ng-container *ngIf="arrCharacterFavorite.length > 0 , else favorite_page">
+          <ng-container *ngFor="let item of arrCharacterFavorite">
+            <app-character-card [oCharacter]="item" (addFavorite)="addDataFavorite($event)"
+              (removeFavorite)="removeDataFavorite($event)"></app-character-card>
+          </ng-container>
+        </ng-container>
+
+        <ng-template #favorite_page>
+          <div class="card-notfound">
+            <p class="title"> Nenhum favorito encontrado </p>
+            <p class="subtitle"> Tente realizar uma nova busca </p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </ng-template>
+</div>

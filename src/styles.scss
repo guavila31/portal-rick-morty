@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'app/core/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import '../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+$my-primary: mat-palette($mat-teal);
+$my-accent: mat-palette($mat-red, A200, A100, A400);
+$my-warn: mat-palette($mat-amber);
+
+$my-theme: mat-light-theme($my-primary, $my-accent, $my-warn);
+
+// Aplicar o tema
+@include angular-material-theme($my-theme);
+
+body {
+  margin: 0;
+  background-color: $background-core !important;
+  font-family: 'Poppins', sans-serif!important;
+  color: $font-color-white;
+}
+
+p {
+  margin: 0 !important;
+  color: $font-color-white;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1{
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-primary {
+  font-family: 'Creepster', sans-serif;
+  color: #00B5CC;
+  -webkit-text-stroke: 1.3px #B2DF28
+}
+
+.input-search {
+  border: 1px solid $border-core;
+  border-radius: 10px;
+  background-color: transparent;
+  height: 3rem;
+  width: 20rem;
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  color: $font-color-white;
+}
+
+.input-search:focus-visible {
+  outline: 1px solid #b2df28;
+  transition: 1000ms;
+}

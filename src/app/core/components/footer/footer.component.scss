@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.footer-item {
+  background-color: $foreground-core;
+  width: 100%;
+  height: 4rem;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 6rem;
+}

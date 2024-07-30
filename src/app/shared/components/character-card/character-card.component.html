@@ -1,0 +1,19 @@
+<div class="card-item">
+  <div class="favorite">
+    <div (click)="setFavorite()" class="btn-fav">
+      <ng-container *ngIf="!oCharacter.favorite; else isFavorite">
+        <mat-icon>favorite_border</mat-icon>
+      </ng-container>
+      <ng-template #isFavorite>
+        <mat-icon>favorite</mat-icon>
+      </ng-template>
+    </div>
+  </div>
+  <img [src]="oCharacter.image" [alt]="oCharacter.name" class="photo">
+  <div class="info">
+    <p class="status"> ({{oCharacter.status}}) </p>
+    <p class="name font-primary"> {{oCharacter.name}} </p>
+    <p class="detail"> {{oCharacter.gender}} </p>
+    <p class="detail"> {{oCharacter.species}} </p>
+  </div>
+</div>
