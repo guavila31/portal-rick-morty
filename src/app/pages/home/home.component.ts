@@ -24,6 +24,7 @@ export class HomeComponent {
 
   sSearch = new FormControl();
   sErrorMessage: string = ''
+  sPlaceholderSearch: string = $localize`Pesquisar`
   nextUrl: string = ''
 
   nStop = 700
@@ -51,7 +52,7 @@ export class HomeComponent {
     this.searchData()
   }
   async abrirModal() {
-    await this.modalService.modalAlert('Não encontrado', 'Não foi encontrado nenhum personagem nessa busca').then(res => {
+    await this.modalService.modalAlert($localize`Não encontrado`, $localize`Não foi encontrado nenhum personagem nessa busca`).then(res => {
       console.log('Entrou aqui');
       this.searchData()
     })
@@ -77,13 +78,13 @@ export class HomeComponent {
 
   addDataFavorite(data: CharacterResultInterface) {
     this.arrCharacterFavorite.push({ ...data, favorite: true })
-    this.snackBar.open('Adicionado aos favoritos', 'Ok', { duration: 1500, horizontalPosition: 'center', verticalPosition: 'top' });
+    this.snackBar.open($localize`Adicionado aos favoritos`, 'Ok', { duration: 1500, horizontalPosition: 'center', verticalPosition: 'top' });
     this.favoriteService.updateCounter({ counter: (this.arrCharacterFavorite.length) });
   }
 
   removeDataFavorite(data: CharacterResultInterface) {
     this.arrCharacterFavorite = this.arrCharacterFavorite.filter(item => item.id !== data.id)
-    this.snackBar.open('Removido dos favoritos', 'Ok', { duration: 1500, horizontalPosition: 'center', verticalPosition: 'top' });
+    this.snackBar.open($localize`Removido dos favoritos`, 'Ok', { duration: 1500, horizontalPosition: 'center', verticalPosition: 'top' });
     this.favoriteService.updateCounter({ counter: (this.arrCharacterFavorite.length) });
   }
 

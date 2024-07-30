@@ -9,14 +9,14 @@
       <div class="btn-item" [class.btn-item-left-active]="!(tab$ | async)" (click)="switchTab(false)">
         <div class="d-flex align-items-center">
           <mat-icon>home</mat-icon>
-          <span>Início</span>
+          <span i18n>Início</span>
         </div>
       </div>
       <div class="divisor"></div>
       <div class="btn-item" [class.btn-item-right-active]="(tab$ | async)" (click)="switchTab(true)">
         <div class="d-flex align-items-center">
           <mat-icon>favorite</mat-icon>
-          <span>Favoritos</span>
+          <span i18n>Favoritos</span>
         </div>
         <span class="count">{{ (counter$ | async)?.counter }}</span>
       </div>

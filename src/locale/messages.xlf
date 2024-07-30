@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="pt-BR" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="8237522812427434567" datatype="html">
+        <source>Início</source>
+        <target> Home </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="8307013293442796509" datatype="html">
+        <source>Favoritos</source>
+        <target> Favorites </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="7597261930406149764" datatype="html">
+        <source> Inicio </source>
+        <target> Home </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="3381860024664015604" datatype="html">
+        <source>resultados encontrados</source>
+        <target> results found </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="3527735713301481118" datatype="html">
+        <source>Carregar mais</source>
+        <target> Load more </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="6755585118086108464" datatype="html">
+        <source> Nada Foi encontrado </source>
+        <target> Nothing Found </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="91554008051195854" datatype="html">
+        <source> Tente realizar uma nova busca </source>
+        <target> Try performing a new search </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="3926867385027614838" datatype="html">
+        <source> Nenhum favorito encontrado </source>
+        <target> No favorites found </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="6434071570521467395" datatype="html">
+        <source>Pesquisar</source>
+        <target> Search </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="1612826460110502193" datatype="html">
+        <source>Não encontrado</source>
+        <target> Not found </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="6662501843420227656" datatype="html">
+        <source>Não foi encontrado nenhum personagem nessa busca</source>
+        <target> No characters found for this search </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="5226426069032765648" datatype="html">
+        <source>Adicionado aos favoritos</source>
+        <target> Added to favorites </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="6015118329364673408" datatype="html">
+        <source>Removido dos favoritos</source>
+        <target> Removed from favorites </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

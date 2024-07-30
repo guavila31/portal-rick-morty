@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "app-rick-morty": {
+      "i18n": {
+        "sourceLocale":"pt-BR",
+        "locales": {
+          "en-US": "src/locale/messages.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -35,7 +41,8 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+            "localize": [ "en-US" ]
           },
           "configurations": {
             "production": {
@@ -60,6 +67,20 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "en-US": {
+              "i18nMissingTranslation": "warning",
+              "outputPath": "dist/app-rick-morty-en-US",
+              "localize": [
+                "en-US"
+              ]
+            },
+            "pt-BR": {
+              "i18nMissingTranslation": "warning",
+              "outputPath": "dist/app-rick-morty-pt-BR",
+              "localize": [
+                "pt-BR"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -97,7 +118,7 @@
             ],
             "styles": [
               "src/styles.scss",
-               "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
