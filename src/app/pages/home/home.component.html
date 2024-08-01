@@ -6,15 +6,15 @@
       <div class="row d-flex justify-content-between align-items-center">
         <div
           class="col-md-6 col-12 mb-3 mb-md-0 d-flex justify-content-md-start justify-content-center align-items-center">
-          <p class="font-primary" i18n> Inicio </p>
+          <p class="font-primary"> {{ 'inicio' | translate }}</p>
         </div>
 
         <div class="col-md-6 col-12 d-flex justify-content-md-end justify-content-center align-items-center">
           <div class="box-input">
-            <input type="text" class="input-search" [placeholder]="sPlaceholderSearch" [formControl]="sSearch" i18n>
+            <input type="text" class="input-search" [placeholder]="sPlaceholderSearch" [formControl]="sSearch">
             <div class="results" *ngIf="(arrCharacterFound$ | async) as character">
               <span>{{ character.info.count }}</span>
-              <span i18n>resultados encontrados</span>
+              <span> {{ 'ResultadosEncontrados' | translate }} </span>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@
         </ng-container>
         <div class="next mt-2 mb-4" *ngIf="nextUrl">
           <ng-container *ngIf="!bLoading; else carregando">
-            <button (click)="loadMoreCharacters()" class="btn-next" i18n>Carregar mais</button>
+            <button (click)="loadMoreCharacters()" class="btn-next">{{ 'CarregarMais' | translate }}</button>
           </ng-container>
           <ng-template #carregando>
             <div class="box-loading">
@@ -41,8 +41,8 @@
 
         <ng-template #home_page>
           <div class="card-notfound">
-            <p class="title" i18n> Nada Foi encontrado </p>
-            <p class="subtitle" i18n> Tente realizar uma nova busca </p>
+            <p class="title"> {{ 'NadaFoiencontrado' | translate }} </p>
+            <p class="subtitle"> {{ 'TenteRealizarUmaNovaBusca' | translate }} </p>
           </div>
         </ng-template>
       </div>
@@ -52,7 +52,7 @@
   <ng-template #templateFavorite>
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
-        <p class="font-primary" i18n>Favoritos</p>
+        <p class="font-primary">{{ 'Favoritos' | translate }}</p>
       </div>
 
       <div class="content d-flex justify-content-center flex-wrap gap-3 mt-3">
@@ -65,8 +65,8 @@
 
         <ng-template #favorite_page>
           <div class="card-notfound">
-            <p class="title" i18n> Nenhum favorito encontrado </p>
-            <p class="subtitle" i18n> Tente realizar uma nova busca </p>
+            <p class="title"> {{ 'NenhumFavoritoEncontrado' | translate }} </p>
+            <p class="subtitle"> {{ 'TenteRealizarUmaNovaBusca' | translate }} </p>
           </div>
         </ng-template>
       </div>

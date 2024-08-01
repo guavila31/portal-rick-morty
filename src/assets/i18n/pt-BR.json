@@ -1,0 +1,15 @@
+{
+  "inicio": "Início",
+  "NadaFoiencontrado": "Nada Foi encontrado",
+  "TenteRealizarUmaNovaBusca": "Tente realizar uma nova busca",
+  "TituloNaoEncontrado": "Não encontrado",
+  "DescricaoNaoEncontrado": "Não foi encontrado nenhum personagem nessa busca",
+  "ResultadosEncontrados": "resultados encontrados",
+  "CarregarMais": "Carregar mais",
+  "Favoritos": "Favoritos",
+  "NenhumFavoritoEncontrado": "Nenhum favorito encontrado",
+  "Pesquisar": "Pesquisar",
+  "AdicionadoAosFavoritos": "Adicionado aos favoritos",
+  "RemovidoDosFavoritos": "Removido dos favoritos",
+  "Fechar": "Fechar"
+}

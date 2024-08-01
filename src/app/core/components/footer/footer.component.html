@@ -1,5 +1,14 @@
 <footer class="footer-item">
-  <div class="d-flex justify-content-center align-items-center">
+  <div class="d-flex justify-content-between align-items-center w-100 mx-3">
     <img src="./assets/img/logo_rm.png">
+
+    <div class="d-flex gap-1">
+      <div class="btn-flag" (click)="changeLanguage('pt-BR')">
+        <img src="./assets/img/icon_br.png">
+      </div>
+      <div class="btn-flag" (click)="changeLanguage('en-US')">
+        <img src="./assets/img/icon_us.png">
+      </div>
+    </div>
   </div>
 </footer>

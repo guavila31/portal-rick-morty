@@ -23,7 +23,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -39,6 +39,14 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CharacterCardComponent } from './shared/components/character-card/character-card.component';
 import { ModalAlertComponent } from './shared/modal/modal-alert/modal-alert.component';
 import { FooterComponent } from './core/components/footer/footer.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +89,15 @@ import { FooterComponent } from './core/components/footer/footer.component';
     MatSnackBarModule,
     MatChipsModule,
     MatMenuModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en-US',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

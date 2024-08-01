@@ -1,0 +1,15 @@
+{
+  "inicio": "Home",
+  "NadaFoiencontrado": "Nothing Found",
+  "TenteRealizarUmaNovaBusca": "Try performing a new search",
+  "TituloNaoEncontrado": "Not Found",
+  "DescricaoNaoEncontrado": "No characters found for this search",
+  "ResultadosEncontrados": "results found",
+  "CarregarMais": "Load more",
+  "Favoritos": "Favorites",
+  "NenhumFavoritoEncontrado": "No favorites found",
+  "Pesquisar": "Search",
+  "AdicionadoAosFavoritos": "Added to favorites",
+  "RemovidoDosFavoritos": "Removed from favorites",
+  "Fechar": "Close"
+}

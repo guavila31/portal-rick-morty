@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
 import { catchError, debounceTime, filter, map, Observable, retry, switchMap, tap, throwError } from 'rxjs';
 import { CharacterInterface, CharacterResultInterface } from 'src/app/shared/interfaces/character';
 import { ModalAlertComponent } from 'src/app/shared/modal/modal-alert/modal-alert.component';
@@ -24,7 +25,7 @@ export class HomeComponent {
 
   sSearch = new FormControl();
   sErrorMessage: string = ''
-  sPlaceholderSearch: string = $localize`Pesquisar`
+  sPlaceholderSearch: string = `Pesquisar`
   nextUrl: string = ''
 
   nStop = 700
@@ -42,17 +43,22 @@ export class HomeComponent {
     private snackBar: MatSnackBar,
     private favoriteService: FavoriteService,
     private modalService: ModalControlService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public translateService: TranslateService
   ) {
-    // favoriteService.tab$.subscribe(tab => {
-
-    // })
-
+    this.translateService.get("Pesquisar").subscribe(text => this.sPlaceholderSearch = text)
     this.arrCharacterFound$ = new Observable()
     this.searchData()
   }
+
   async abrirModal() {
-    await this.modalService.modalAlert($localize`Não encontrado`, $localize`Não foi encontrado nenhum personagem nessa busca`).then(res => {
+    let sTitle = ''
+    let sDescription = ''
+
+    this.translateService.get("TituloNaoEncontrado").subscribe(text => sTitle = text)
+    this.translateService.get("DescricaoNaoEncontrado").subscribe(text => sDescription = text)
+
+    await this.modalService.modalAlert(sTitle, sDescription).then(res => {
       console.log('Entrou aqui');
       this.searchData()
     })
@@ -78,13 +84,17 @@ export class HomeComponent {
 
   addDataFavorite(data: CharacterResultInterface) {
     this.arrCharacterFavorite.push({ ...data, favorite: true })
-    this.snackBar.open($localize`Adicionado aos favoritos`, 'Ok', { duration: 1500, horizontalPosition: 'center', verticalPosition: 'top' });
+    let sTitle = ''
+    this.translateService.get("AdicionadoAosFavoritos").subscribe(text => sTitle = text)
+    this.snackBar.open(sTitle, 'Ok', { duration: 1500, horizontalPosition: 'center', verticalPosition: 'top' });
     this.favoriteService.updateCounter({ counter: (this.arrCharacterFavorite.length) });
   }
 
   removeDataFavorite(data: CharacterResultInterface) {
     this.arrCharacterFavorite = this.arrCharacterFavorite.filter(item => item.id !== data.id)
-    this.snackBar.open($localize`Removido dos favoritos`, 'Ok', { duration: 1500, horizontalPosition: 'center', verticalPosition: 'top' });
+    let sTitle = ''
+    this.translateService.get("RemovidoDosFavoritos").subscribe(text => sTitle = text)
+    this.snackBar.open(sTitle, 'Ok', { duration: 1500, horizontalPosition: 'center', verticalPosition: 'top' });
     this.favoriteService.updateCounter({ counter: (this.arrCharacterFavorite.length) });
   }
 
