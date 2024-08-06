@@ -49,6 +49,9 @@ export class HomeComponent {
     this.translateService.get("Pesquisar").subscribe(text => this.sPlaceholderSearch = text)
     this.arrCharacterFound$ = new Observable()
     this.searchData()
+    this.tab$.subscribe(res =>
+      this.arrCharacter = this.mergeArrays(this.arrCharacter, this.arrCharacterFavorite)
+    )
   }
 
   async abrirModal() {
@@ -59,7 +62,6 @@ export class HomeComponent {
     this.translateService.get("DescricaoNaoEncontrado").subscribe(text => sDescription = text)
 
     await this.modalService.modalAlert(sTitle, sDescription).then(res => {
-      console.log('Entrou aqui');
       this.searchData()
     })
   }
